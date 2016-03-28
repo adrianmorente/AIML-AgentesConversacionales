@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!--La dinamica en cada regla es buscar al personaje a descartar,
+y si no esta ya descartado, lo borramos de la lista de nombres.
+Deberemos llevar la cuenta de los elementos de la lista, hasta que sea
+uno, momento en el cual devolvemos dicho nombre que sera el nombre
+del personaje pensado por el humano.
+
+Para ello, me inventare una regla que realice dicha tarea, se llamara
+"BORRAR * SI EXISTE" -->
+
+<!--En el caso de que el usuario elija pensar el personaje-->
+<category>
+	<pattern>yo lo pienso</pattern>
+	<template><srai>^ PENSARLO YO ^</srai></template>
+</category>
+
+<category>
+	<pattern>tu ^ adivinas</pattern>
+	<template><srai>^ PENSARLO YO ^</srai></template>
+</category>
+
+<!--Inicializar lista de nombres y lanzar la primera pregunta-->
+<category>
+	<pattern>^ pensarlo yo ^</pattern>
+	<template>
+		<think>
+			<set name="list_names">
+				Alejandro
+		        Alfonso
+		        Antonio
+		        Cristina
+		        Gabriela
+		        Ivan
+		        Javier
+		        Juan
+		        Laura
+		        Luis
+		        Marco
+		        Maria
+		        Paco
+		        Pepe
+		        Sofia
+		        Sonia
+	    	</set>
+	    </think>
+	    Tu personaje es un hombre
+	</template>
+</category>
+
+<!--Regla auxiliar para buscar y descartar (si procede) personajes-->
+<category>
+	<pattern>BORRAR * SI EXISTE</pattern>
+	<template>
+		<think>
+			<set var="existe">
+				<srai>FINDITEM <star/> IN <get name="list_names"/></srai>
+			</set>
+			<condition var="existe">
+				<li value="0"></li>
+				<li><set name="list_names"><srai>REMOVEITEM <get var="existe"/> IN <get name="list_names"/></srai></set></li>
+			</condition>
+		</think>
+	</template>
+</category>
+
+<category>
+	<pattern>Si</pattern>
+	<that>TU PERSONAJE ES UN HOMBRE</that>
+	<template>
+		<think>
+			<srai>BORRAR cristina SI EXISTE</srai>
+			<srai>BORRAR gabriela SI EXISTE</srai>
+			<srai>BORRAR laura SI EXISTE</srai>
+			<srai>BORRAR maria SI EXISTE</srai>
+			<srai>BORRAR sofia SI EXISTE</srai>
+			<srai>BORRAR sonia SI EXISTE</srai>
+		</think>
+		Tiene la piel oscura
+	</template>
+</category>
+
+<category>
+	<pattern>No</pattern>
+	<that>TU PERSONAJE ES UN HOMBRE</that>
+	<template>
+		<think>
+			<srai>BORRAR alejandro SI EXISTE</srai>
+			<srai>BORRAR alfonso SI EXISTE</srai>
+			<srai>BORRAR antonio SI EXISTE</srai>
+			<srai>BORRAR ivan SI EXISTE</srai>
+			<srai>BORRAR javier SI EXISTE</srai>
+			<srai>BORRAR juan SI EXISTE</srai>
+			<srai>BORRAR luis SI EXISTE</srai>
+			<srai>BORRAR marco SI EXISTE</srai>
+			<srai>BORRAR paco SI EXISTE</srai>
+			<srai>BORRAR pepe SI EXISTE</srai>
+		</think>
+		Tiene la piel oscura
+	</template>
+</category>
+
+<category>
+	<pattern>Si</pattern>
+	<that>TIENE LA PIEL OSCURA</that>
+	<template>
+		<think>
+			<srai>BORRAR alfonso SI EXISTE</srai>
+			<srai>BORRAR cristina SI EXISTE</srai>
+			<srai>BORRAR gabriela SI EXISTE</srai>
+			<srai>BORRAR ivan SI EXISTE</srai>
+			<srai>BORRAR laura SI EXISTE</srai>
+			<srai>BORRAR luis SI EXISTE</srai>
+			<srai>BORRAR marco SI EXISTE</srai>
+			<srai>BORRAR maria SI EXISTE</srai>
+			<srai>BORRAR paco SI EXISTE</srai>
+			<srai>BORRAR pepe SI EXISTE</srai>
+			<srai>BORRAR sofia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Tiene el pelo moreno</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>No</pattern>
+	<that>TIENE LA PIEL OSCURA</that>
+	<template>
+		<think>
+			<srai>BORRAR alejandro SI EXISTE</srai>
+			<srai>BORRAR antonio SI EXISTE</srai>
+			<srai>BORRAR javier SI EXISTE</srai>
+			<srai>BORRAR juan SI EXISTE</srai>
+			<srai>BORRAR sonia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Tiene el pelo moreno</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>Si</pattern>
+	<that>TIENE EL PELO MORENO</that>
+	<template>
+		<think>
+			<srai>BORRAR gabriela SI EXISTE</srai>
+			<srai>BORRAR ivan SI EXISTE</srai>
+			<srai>BORRAR juan SI EXISTE</srai>
+			<srai>BORRAR laura SI EXISTE</srai>
+			<srai>BORRAR luis SI EXISTE</srai>
+			<srai>BORRAR marco SI EXISTE</srai>
+			<srai>BORRAR maria SI EXISTE</srai>
+			<srai>BORRAR paco SI EXISTE</srai>
+			<srai>BORRAR pepe SI EXISTE</srai>
+			<srai>BORRAR sofia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Tiene los ojos claros</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>No</pattern>
+	<that>TIENE EL PELO MORENO</that>
+	<template>
+		<think>
+			<srai>BORRAR alejandro SI EXISTE</srai>
+			<srai>BORRAR alfonso SI EXISTE</srai>
+			<srai>BORRAR antonio SI EXISTE</srai>
+			<srai>BORRAR cristina SI EXISTE</srai>
+			<srai>BORRAR javier SI EXISTE</srai>
+			<srai>BORRAR sonia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Tiene los ojos claros</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>Si</pattern>
+	<that>TIENE LOS OJOS CLAROS</that>
+	<template>
+		<think>
+			<srai>BORRAR alejandro SI EXISTE</srai>
+			<srai>BORRAR antonio SI EXISTE</srai>
+			<srai>BORRAR javier SI EXISTE</srai>
+			<srai>BORRAR juan SI EXISTE</srai>
+			<srai>BORRAR maria SI EXISTE</srai>
+			<srai>BORRAR pepe SI EXISTE</srai>
+			<srai>BORRAR sofia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Lleva gafas</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>No</pattern>
+	<that>TIENE LOS OJOS CLAROS</that>
+	<template>
+		<think>
+			<srai>BORRAR alfonso SI EXISTE</srai>
+			<srai>BORRAR cristina SI EXISTE</srai>
+			<srai>BORRAR gabriela SI EXISTE</srai>
+			<srai>BORRAR ivan SI EXISTE</srai>
+			<srai>BORRAR laura SI EXISTE</srai>
+			<srai>BORRAR luis SI EXISTE</srai>
+			<srai>BORRAR marco SI EXISTE</srai>
+			<srai>BORRAR paco SI EXISTE</srai>
+			<srai>BORRAR sonia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Lleva gafas</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>Si</pattern>
+	<that>LLEVA GAFAS</that>
+	<template>
+		<think>
+			<srai>BORRAR alejandro SI EXISTE</srai>
+			<srai>BORRAR alfonso SI EXISTE</srai>
+			<srai>BORRAR antonio SI EXISTE</srai>
+			<srai>BORRAR cristina SI EXISTE</srai>
+			<srai>BORRAR gabriela SI EXISTE</srai>
+			<srai>BORRAR ivan SI EXISTE</srai>
+			<srai>BORRAR javier SI EXISTE</srai>
+			<srai>BORRAR juan SI EXISTE</srai>
+			<srai>BORRAR laura SI EXISTE</srai>
+			<srai>BORRAR luis SI EXISTE</srai>
+			<srai>BORRAR marco SI EXISTE</srai>
+			<srai>BORRAR paco SI EXISTE</srai>
+			<srai>BORRAR sonia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Tiene bigote</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>No</pattern>
+	<that>LLEVA GAFAS</that>
+	<template>
+		<think>
+			<srai>BORRAR maria SI EXISTE</srai>
+			<srai>BORRAR pepe SI EXISTE</srai>
+			<srai>BORRAR sofia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Tiene bigote</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>Si</pattern>
+	<that>TIENE BIGOTE</that>
+	<template>
+		<think>
+			<srai>BORRAR alejandro SI EXISTE</srai>
+			<srai>BORRAR cristina SI EXISTE</srai>
+			<srai>BORRAR gabriela SI EXISTE</srai>
+			<srai>BORRAR juan SI EXISTE</srai>
+			<srai>BORRAR laura SI EXISTE</srai>
+			<srai>BORRAR luis SI EXISTE</srai>
+			<srai>BORRAR marco SI EXISTE</srai>
+			<srai>BORRAR maria SI EXISTE</srai>
+			<srai>BORRAR paco SI EXISTE</srai>
+			<srai>BORRAR sofia SI EXISTE</srai>
+			<srai>BORRAR sonia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Tiene barba</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>No</pattern>
+	<that>TIENE BIGOTE</that>
+	<template>
+		<think>
+			<srai>BORRAR alfonso SI EXISTE</srai>
+			<srai>BORRAR antonio SI EXISTE</srai>
+			<srai>BORRAR ivan SI EXISTE</srai>
+			<srai>BORRAR javier SI EXISTE</srai>
+			<srai>BORRAR pepe SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Tiene barba</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>Si</pattern>
+	<that>TIENE BARBA</that>
+	<template>
+		<think>
+			<srai>BORRAR alejandro SI EXISTE</srai>
+			<srai>BORRAR cristina SI EXISTE</srai>
+			<srai>BORRAR gabriela SI EXISTE</srai>
+			<srai>BORRAR ivan SI EXISTE</srai>
+			<srai>BORRAR javier SI EXISTE</srai>
+			<srai>BORRAR juan SI EXISTE</srai>
+			<srai>BORRAR laura SI EXISTE</srai>
+			<srai>BORRAR marco SI EXISTE</srai>
+			<srai>BORRAR maria SI EXISTE</srai>
+			<srai>BORRAR paco SI EXISTE</srai>
+			<srai>BORRAR pepe SI EXISTE</srai>
+			<srai>BORRAR sofia SI EXISTE</srai>
+			<srai>BORRAR sonia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li></li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>No</pattern>
+	<that>TIENE BARBA</that>
+	<template>
+		<think>
+			<srai>BORRAR alfonso SI EXISTE</srai>
+			<srai>BORRAR antonio SI EXISTE</srai>
+			<srai>BORRAR luis SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Tiene el pelo rubio</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>Si</pattern>
+	<that>TIENE EL PELO RUBIO</that>
+	<template>
+		<think>
+			<srai>BORRAR alejandro SI EXISTE</srai>
+			<srai>BORRAR alfonso SI EXISTE</srai>
+			<srai>BORRAR antonio SI EXISTE</srai>
+			<srai>BORRAR cristina SI EXISTE</srai>
+			<srai>BORRAR gabriela SI EXISTE</srai>
+			<srai>BORRAR javier SI EXISTE</srai>
+			<srai>BORRAR juan SI EXISTE</srai>
+			<srai>BORRAR luis SI EXISTE</srai>
+			<srai>BORRAR marco SI EXISTE</srai>
+			<srai>BORRAR maria SI EXISTE</srai>
+			<srai>BORRAR pepe SI EXISTE</srai>
+			<srai>BORRAR sofia SI EXISTE</srai>
+			<srai>BORRAR sonia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li></li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>No</pattern>
+	<that>TIENE EL PELO RUBIO</that>
+	<template>
+		<think>
+			<srai>BORRAR ivan SI EXISTE</srai>
+			<srai>BORRAR laura SI EXISTE</srai>
+			<srai>BORRAR paco SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Tiene el pelo blanco</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>Si</pattern>
+	<that>TIENE EL PELO BLANCO</that>
+	<template>
+		<think>
+			<srai>BORRAR alejandro SI EXISTE</srai>
+			<srai>BORRAR alfonso SI EXISTE</srai>
+			<srai>BORRAR antonio SI EXISTE</srai>
+			<srai>BORRAR cristina SI EXISTE</srai>
+			<srai>BORRAR ivan SI EXISTE</srai>
+			<srai>BORRAR javier SI EXISTE</srai>
+			<srai>BORRAR juan SI EXISTE</srai>
+			<srai>BORRAR laura SI EXISTE</srai>
+			<srai>BORRAR luis SI EXISTE</srai>
+			<srai>BORRAR marco SI EXISTE</srai>
+			<srai>BORRAR maria SI EXISTE</srai>
+			<srai>BORRAR paco SI EXISTE</srai>
+			<srai>BORRAR pepe SI EXISTE</srai>
+			<srai>BORRAR sofia SI EXISTE</srai>
+			<srai>BORRAR sonia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li></li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>No</pattern>
+	<that>TIENE EL PELO BLANCO</that>
+	<template>
+		<think>
+			<srai>BORRAR gabriela SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li>Tiene el pelo pelirrojo</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>Si</pattern>
+	<that>TIENE EL PELO PELIRROJO</that>
+	<template>
+		<think>
+			<srai>BORRAR alejandro SI EXISTE</srai>
+			<srai>BORRAR alfonso SI EXISTE</srai>
+			<srai>BORRAR antonio SI EXISTE</srai>
+			<srai>BORRAR cristina SI EXISTE</srai>
+			<srai>BORRAR gabriela SI EXISTE</srai>
+			<srai>BORRAR ivan SI EXISTE</srai>
+			<srai>BORRAR javier SI EXISTE</srai>
+			<srai>BORRAR juan SI EXISTE</srai>
+			<srai>BORRAR laura SI EXISTE</srai>
+			<srai>BORRAR marco SI EXISTE</srai>
+			<srai>BORRAR paco SI EXISTE</srai>
+			<srai>BORRAR sofia SI EXISTE</srai>
+			<srai>BORRAR sonia SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li></li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>No</pattern>
+	<that>TIENE EL PELO PELIRROJO</that>
+	<template>
+		<think>
+			<srai>BORRAR luis SI EXISTE</srai>
+			<srai>BORRAR maria SI EXISTE</srai>
+			<srai>BORRAR pepe SI EXISTE</srai>
+			<set var="quedanpersonajes">
+				<srai>COUNT <get name="list_names"/></srai>
+			</set>
+		</think>
+		<condition var="quedanpersonajes">
+			<li value="1">Tu personaje es <srai>TOP <get name="list_names"/></srai></li>
+			<li></li>
+		</condition>
+	</template>
+</category>
+
+
+</aiml>

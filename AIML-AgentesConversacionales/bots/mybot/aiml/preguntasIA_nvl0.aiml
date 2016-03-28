@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<!--Regla 1. COMO APRUEBO IA?-->
+<category>
+    <pattern>* apruebo IA ^</pattern>
+    <template>Tienes que sacar minimo un 5 juntando la media de teoria con la de practicas</template>
+</category>
+
+<category>
+    <pattern>* aprobar IA ^</pattern>
+    <template><srai>* APRUEBO IA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* apruebo inteligencia artificial ^</pattern>
+    <template><srai>* APRUEBO IA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* aprobar inteligencia artificial ^</pattern>
+    <template><srai>* APRUEBO IA ^</srai></template>
+</category>
+
+<!--Regla 2. COMO HAGO PARA APROBAR LA TEORIA?-->
+<category>
+    <pattern>* aprobar la ^ teoria ^</pattern>
+    <template>Has de sacar mas de un 5 en el examen final en junio</template>
+</category>
+
+<category>
+    <pattern>* apruebo la ^ teoria ^</pattern>
+    <template><srai>* APROBAR LA TEORIA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* apruebo la parte teorica ^</pattern>
+    <template><srai>* APROBAR LA TEORIA ^</srai></template>
+</category>
+
+<!--Regla 3. COMO CONSIGO SUPERAR LA PARTE PRACTICA?-->
+<category>
+    <pattern>* superar * practica ^</pattern>
+    <template>Necesitas llegar al 5 sumando los 4 examenes de practicas, los cuales suponen un 25 por ciento cada uno</template>
+</category>
+
+<category>
+    <pattern>* superar * practicas ^</pattern>
+    <template><srai>* SUPERAR * PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* aprobar * practica ^</pattern>
+    <template><srai>* SUPERAR * PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* aprobar * practicas ^</pattern>
+    <template><srai>* SUPERAR * PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* supero * practicas ^</pattern>
+    <template><srai>* SUPERAR * PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* apruebo * practicas ^</pattern>
+    <template><srai>* SUPERAR * PRACTICA ^</srai></template>
+</category>
+
+<!--Regla 4. COMO SE EVALUA EN LA CONVOCATORIA DE JUNIO?-->
+<category>
+    <pattern>como * evalua * convocatoria de junio ^</pattern>
+    <template>La nota final sera el minimo entre 10 y la suma de la nota del examen con la nota obtenida en las pruebas parciales</template>
+</category>
+
+<!--Regla 5. QUE PASA SI TENGO QUE PRESENTARME EN LA CONVOCATORIA DE SEPTIEMBRE?-->
+<category>
+    <pattern>* presentarme * convocatoria de septiembre ^</pattern>
+    <template>Constara de un examen escrito unico de teoria, sin entrega de practicas</template>
+</category>
+
+<!--Regla 6. HAY EXAMEN DE PRACTICAS EN LA CONVOCATORIA DE SEPTIEMBRE?-->
+<category>
+    <pattern>* examen de practicas * convocatoria de septiembre ^</pattern>
+    <template>No, solo un examen escrito de teoria</template>
+</category>
+
+<!--Regla 7. QUE PASA SI NO PUEDO ASISTIR A CLASE REGULARMENTE?-->
+<category>
+    <pattern>* no puedo asistir ^ regularmente ^</pattern>
+    <template>Perderias el 10 por ciento de puntuacion en practicas por asistencia y participacion en clase</template>
+</category>
+
+<category>
+    <pattern>* no asisto ^ regularmente ^</pattern>
+    <template><srai>* NO PUEDO ASISTIR ^ REGULARMENTE ^</srai></template>
+</category>
+
+<category>
+    <pattern>* no voy ^ a clase ^</pattern>
+    <template><srai>* NO PUEDO ASISTIR ^ REGULARMENTE ^</srai></template>
+</category>
+
+<!--Regla 8. HAY NOTA MINIMA PARA APROBAR?-->
+<category>
+    <pattern>* nota ^ para aprobar ^</pattern>
+    <template>Necesitas minimo un 5 en la nota final</template>
+</category>
+
+<!--Regla 9. LAS PRACTICAS SON OBLIGATORIAS?-->
+<category>
+    <pattern>* practicas son obligatorias ^</pattern>
+    <template>Si, tanto la teoria como las practicas son obligatorias</template>
+</category>
+
+<category>
+    <pattern>^ son obligatorias * practicas ^</pattern>
+    <template><srai>* PRACTICAS SON OBLIGATORIAS ^</srai></template>
+</category>
+
+<!--Regla 10. CUANTO VALE CADA PRACTICA CON RESPECTO A LA NOTA FINAL?-->
+<category>
+    <pattern>^ cuanto * cada practica * nota final ^</pattern>
+    <template>Cada practica vale un 25 por ciento sobre la nota final de practicas</template>
+</category>
+
+<!--Regla 11. CUANTO VALE LA PARTICIPACION CON RESPECTO A LA NOTA FINAL?-->
+<category>
+    <pattern>^ cuanto * participacion * nota final ^</pattern>
+    <template>La participacion vale hasta un 10 por ciento sobre la nota final de practicas</template>
+</category>
+
+<!--Regla 12. CUANTO VALE CADA GUION DE PRACTICAS CON RESPECTO A LA NOTA FINAL?-->
+<category>
+    <pattern>^ cuanto * cada guion de practicas * nota final ^</pattern>
+    <template><srai>^ CUANTO * CADA PRACTICA * NOTA FINAL ^</srai></template>
+</category>
+
+<!--Regla 13. COMO SE CONSIGUEN PUNTOS POR PARTICIPACION?-->
+<category>
+    <pattern>^ como * puntos * participacion ^</pattern>
+    <template>Para acumular puntos de participacion, deberas asistir a clase regularmente, atender y participar en las actividas o preguntas propuestas por el profesor</template>
+</category>
+
+<!--Regla 14. QUE ES LO MINIMO QUE NECESITO PARA APROBAR LA ASIGNATURA?-->
+<category>
+    <pattern>* minimo * para aprobar ^</pattern>
+    <template><srai>* APRUEBO IA ^</srai></template>
+</category>
+
+<!--Regla 15. LOS TRABAJOS SON INDIVIDUALES?-->
+<category>
+    <pattern>* trabajos son individuales ^</pattern>
+    <template>Todos los trabajos se deben realizar de forma individual</template>
+</category>
+
+<category>
+    <pattern>* practicas son individuales ^</pattern>
+    <template><srai>* TRABAJOS SON INDIVIDUALES ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ son individuales * practicas ^</pattern>
+    <template><srai>* TRABAJOS SON INDIVIDUALES ^</srai></template>
+</category>
+
+<!--Regla 16. SE PUEDEN HACER LOS TRABAJOS EN GRUPO?-->
+<category>
+    <pattern>^ se pueden * trabajos en grupo ^</pattern>
+    <template><srai>* TRABAJOS SON INDIVIDUALES ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ se pueden * practicas en grupo ^</pattern>
+    <template><srai>* TRABAJOS SON INDIVIDUALES ^</srai></template>
+</category>
+
+<!--Regla 17. HAY QUE ENTREGAR LOS EJERCICIOS DE LAS RELACIONES DE PROBLEMAS?-->
+<category>
+    <pattern>^ entregar los ejercicios ^ de problemas ^</pattern>
+    <template>Las relaciones de problemas son para poner en practica lo aprendido, pero no hay que entregar los ejercicios resueltos</template>
+</category>
+
+<!--Regla 18. POR QUE TENGO QUE ESTUDIAR?-->
+<category>
+    <pattern>* que tengo que estudiar ^</pattern>
+    <template>Para poder superar la asignatura y en un futuro, la carrera</template>
+</category>
+
+<category>
+    <pattern>* que he de estudiar ^</pattern>
+    <template><srai>* QUE TENGO QUE ESTUDIAR ^</srai></template>
+</category>
+
+<category>
+    <pattern>* que debo ^ estudiar ^</pattern>
+    <template><srai>* QUE TENGO QUE ESTUDIAR ^</srai></template>
+</category>
+
+<!--Regla 19. CUANTO VALE EL PRIMER EXAMEN DE TEORIA?-->
+<category>
+    <pattern>^ cuanto * el primer examen de teoria ^</pattern>
+    <template>El primer examen de teoria cuenta hasta 0.5 puntos sobre la nota final del examen de teoria</template>
+</category>
+
+<!--Regla 20. PUEDO TENER UNA NOTA MAYOR A 10?-->
+<category>
+    <pattern>^ puedo * nota mayor a 10 ^</pattern>
+    <template>No, la nota final tendra 10 como tope</template>
+</category>
+
+<category>
+    <pattern>^ puedo * nota superior a 10 ^</pattern>
+    <template><srai>^ PUEDO * NOTA MAYOR A 10 ^</srai></template>
+</category>
+
+<!--Regla 21. PUEDO RECUPERAR UNA PRACTICA O EXAMEN?-->
+<category>
+    <pattern>^ puedo repetir ^ una practica ^</pattern>
+    <template>Las practicas o examenes no se pueden repetir ni recuperar, a no ser que se deba a una causa de fuerza mayor, en cuyo caso deberias hablar con tu profesor correspondiente y que el contemple la posibilidad de repetir dicho evento</template>
+</category>
+
+<category>
+    <pattern>^ puedo repetir ^ un examen ^</pattern>
+    <template><srai>^ PUEDO REPETIR UNA PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ puedo recuperar ^ una practica ^</pattern>
+    <template><srai>^ PUEDO REPETIR UNA PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ puedo repetir ^ un examen ^</pattern>
+    <template><srai>^ PUEDO REPETIR UNA PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ se puede recuperar ^ una practica ^</pattern>
+    <template><srai>^ PUEDO REPETIR UNA PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ se puede repetir ^ un examen ^</pattern>
+    <template><srai>^ PUEDO REPETIR UNA PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ se puede recuperar ^ un examen ^</pattern>
+    <template><srai>^ PUEDO REPETIR UNA PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ se puede repetir ^ una practica ^</pattern>
+    <template><srai>^ PUEDO REPETIR UNA PRACTICA ^</srai></template>
+</category>
+
+<!--Regla 22. QUE PASA SI ME COPIO DE OTRO ESTUDIANTE?-->
+<category>
+    <pattern>^ si me copio de *</pattern>
+    <template>Si un estudiante se copia de otro en un examen o practica, ambos estudiantes estaran suspensos en ese examen o practica</template>
+</category>
+
+<category>
+    <pattern>^ si me copio del ^</pattern>
+    <template><srai>^ SI ME COPIO DE *</srai></template>
+</category>
+
+<!--Regla 23. QUE PASA SI ME DEJO COPIAR DE OTRO ESTUDIANTE?-->
+<category>
+    <pattern>^ si me dejo copiar ^</pattern>
+    <template><srai>^ SI ME COPIO DE *</srai></template>
+</category>
+
+<category>
+    <pattern>^ si ^ se copia de mi ^</pattern>
+    <template><srai>^ SI ME COPIO DE *</srai></template>
+</category>
+
+<!--Regla 24. Y SI SUSPENDO EN LA CONVOCATORIA DE JUNIO?-->
+<category>
+    <pattern>^ si suspendo * junio ^</pattern>
+    <template>Si suspendes en junio, siempre podras presentarte al examen unico escrito de teoria en septiembre</template>
+</category>
+
+<category>
+    <pattern>^ si no * aprobar * junio ^</pattern>
+    <template><srai>^ SI SUSPENDO * DE JUNIO ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ si no apruebo * junio ^</pattern>
+    <template><srai>^ SI SUSPENDO * DE JUNIO ^</srai></template>
+</category>
+
+<!--Regla 25. CUANTO VALE LA PRACTICA Y LA TEORIA?-->
+<category>
+    <pattern>^ cuanto * la ^ practica ^</pattern>
+    <template>Tanto la parte teorica como la parte practica suponen un 50 por ciento de la nota final</template>
+</category>
+
+<category>
+    <pattern>^ cuanto * la parte teorica ^</pattern>
+    <template><srai>^ CUANTO * LA PRACTICA Y LA TEORIA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ cuanto * las practicas ^</pattern>
+    <template><srai>^ CUANTO * LA PRACTICA Y LA TEORIA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ cuanto * la teoria ^</pattern>
+    <template><srai>^ CUANTO * LA PRACTICA Y LA TEORIA ^</srai></template>
+</category>
+
+<!--Regla 26. CUAL ES EL HORARIO DE TUTORIAS DEL PROFESOR DE PRACTICAS?-->
+<category>
+    <pattern>* horario * tutorias * profesor ^</pattern>
+    <template>Los martes: 8:30-9:30 y 11:30-13:30, los miercoles: 8:30-9:30 y 11:30-13:30. D40 (ETSIIT)</template>
+</category>
+
+<category>
+    <pattern>* hora * tutorias * profesor ^</pattern>
+    <template><srai>* HORARIO * TUTORIAS * PROFESOR ^</srai></template>
+</category>
+
+<!--Regla 27. CUAL ES EL CORREO ELECTRONICO DEL PROFESOR DE TEORIA?-->
+<category>
+    <pattern>* correo * profesor ^</pattern>
+    <template>El correo del profesor es: a.gonzalez@decsai.ugr.es</template>
+</category>
+
+<!--Regla 28. SE PUEDE APROBAR LA PARTE PRACTICA DE LA ASIGNATURA SI NO PRESENTO UNA PRACTICA?-->
+<category>
+    <pattern>^ se puede aprobar ^ parte practica ^ si no presento *</pattern>
+    <template>Podrias aprobar siempre y cuando el resto de practicas te supusieran una media aprobada</template>
+</category>
+
+<category>
+    <pattern>^ puedo aprobar ^ parte practica ^ si no presento *</pattern>
+    <template><srai>^ SE PUEDE APROBAR ^ LA PARTE PRACTICA ^ SI NO PRESENTO *</srai></template>
+</category>
+
+<category>
+    <pattern>^ se puede aprobar ^ practicas ^ si no entrego *</pattern>
+    <template><srai>^ SE PUEDE APROBAR ^ LA PARTE PRACTICA ^ SI NO PRESENTO *</srai></template>
+</category>
+
+<category>
+    <pattern>^ puedo aprobar ^ parte practica ^ si no entrego *</pattern>
+    <template><srai>^ SE PUEDE APROBAR ^ LA PARTE PRACTICA ^ SI NO PRESENTO *</srai></template>
+</category>
+
+<!--Regla 29. CUAL ES LA NOTA MINIMA QUE TENGO QUE OBTENER EN CADA PARTE PARA HACER MEDIA?-->
+<category>
+    <pattern>* nota ^ minima ^ para ^ hacer media ^</pattern>
+    <template>No necesitas nota minima en cada parte para hacer media, pero la suma de ambas ha de ser superior a 5</template>
+</category>
+
+<category>
+    <pattern>* nota ^ necesaria ^ hacer media ^</pattern>
+    <template><srai>* NOTA ^ MINIMA ^ PARA ^ HACER MEDIA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* nota necesito ^ hacer media ^</pattern>
+    <template><srai>* NOTA ^ MINIMA ^ PARA ^ HACER MEDIA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ para hacer media * nota hace falta ^</pattern>
+    <template><srai>* NOTA ^ MINIMA ^ PARA ^ HACER MEDIA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ para haer media * nota minima ^</pattern>
+    <template><srai>* NOTA ^ MINIMA ^ PARA ^ HACER MEDIA ^</srai></template>
+</category>
+
+<!--Regla 30. QUE PUNTUACION OBTENGO EN LA PRACTICA 1 SI OPTO POR DEFENDER EL NIVEL 3 Y NO LO SUPERO?-->
+<category>
+    <pattern>^ que puntuacion * practica 1 * nivel 3 *  no lo supero ^</pattern>
+    <template>Si optas por evaluarte en el nivel 3 y no lo superas (habiendo superado los niveles 0 y 1), obtendrás una calificación de 5</template>
+</category>
+
+<category>
+    <pattern>^ cuantos puntos * practica 1 * nivel 3 * no lo supero ^</pattern>
+    <template><srai>^ QUE PUNTUACION * PRACTICA 1 * NIVEL 3 * NO LO SUPERO ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ que puntuacion * nivel 3 * practica 1 * no lo supero ^</pattern>
+    <template><srai>^ QUE PUNTUACION * PRACTICA 1 * NIVEL 3 * NO LO SUPERO ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ cuantos puntos * nivel 3 * practica 1 * no lo supero ^</pattern>
+    <template><srai>^ QUE PUNTUACION * PRACTICA 1 * NIVEL 3 * NO LO SUPERO ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ cuantos puntos * practica 1 * nivel 3 * fallo ^</pattern>
+    <template><srai>^ QUE PUNTUACION * PRACTICA 1 * NIVEL 3 * NO LO SUPERO ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ que puntuacion * nivel 3 * practica 1 * fallo ^</pattern>
+    <template><srai>^ QUE PUNTUACION * PRACTICA 1 * NIVEL 3 * NO LO SUPERO ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ cuantos puntos * nivel 3 * practica 1 * fallo ^</pattern>
+    <template><srai>^ QUE PUNTUACION * PRACTICA 1 * NIVEL 3 * NO LO SUPERO ^</srai></template>
+</category>
+
+<!--Regla 31. PUEDO ENTREGAR LA PRACTICA 1 SIN HACER LA TAREA RELATIVA AL NIVEL 0?-->
+<category>
+    <pattern>puedo * practica 1 ^ sin * nivel 0 ^</pattern>
+    <template>Para evaluar la parte relativa a un nivel determinado, deberas haber entregado la tarea relativa al nivel inmediatamente anterior, siendo el nivel 0 imprescindible, asi que no podrias entregar la practica 1 sin hacer la tarea relativa al nivel 0</template>
+</category>
+
+<category>
+    <pattern>^ si no entrego * nivel 0 ^ puedo * practica 1 ^</pattern>
+    <template><srai>PUEDO * PRACTICA 1 ^ SIN * NIVEL 0 ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ si no hago * nivel 0 ^ puedo * practica 1 ^</pattern>
+    <template><srai>PUEDO * PRACTICA 1 ^ SIN * NIVEL 0 ^</srai></template>
+</category>
+
+<!--Regla 32. QUE TENGO QUE HACER SI NO PUEDO ASISTIR A LA SESION DE PRACTICAS EN LA QUE
+ME CORRESPONDE HACER LA DEFENSA DE MI PRACTICA 1?-->
+<category>
+    <pattern>^ si no puedo asistir ^ me corresponde defender ^ mi practica ^</pattern>
+    <template>Si no puedes asistir a clase de practicas el dia que te corresponde hacer la defensa de tu practica, probablemente perderas el derecho a evaluarte de dicha practica, pero aun asi siempre es mejor comunicarlo con antelacion a tu profesor y acordar con el alguna otra fecha si es posible</template>
+</category>
+
+<category>
+    <pattern>^ si no puedo asistir ^ me corresponde ^ hacer la defensa de mi practica ^</pattern>
+    <template><srai>^ SI NO PUEDO ASISTIR ^ ME CORRESPONDE DEFENDER ^ MI PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ si me corresponde defender mi practica * no puedo asistir ^</pattern>
+    <template><srai>^ SI NO PUEDO ASISTIR ^ ME CORRESPONDE DEFENDER ^ MI PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ si me toca defender mi practica * no puedo asistir ^</pattern>
+    <template><srai>^ SI NO PUEDO ASISTIR ^ ME CORRESPONDE DEFENDER ^ MI PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ si no puedo asistir ^ me toca defender ^ mi practica ^</pattern>
+    <template><srai>^ SI NO PUEDO ASISTIR ^ ME CORRESPONDE DEFENDER ^ MI PRACTICA ^</srai></template>
+</category>
+
+<!--Regla 33. CUANTAS PRUEBAS TEORICAS TENDRE A LO LARGO DEL CURSO?-->
+<category>
+    <pattern>^ cuantas pruebas teoricas * a lo largo del curso ^</pattern>
+    <template> A lo largo del curso, se produciran 3 pruebas teoricas (0.5, 1 y 0.5 puntos respectivamente), que conjuntamente podrian sumar hasta 2 puntos sobre la nota final de teoria</template>
+</category>
+
+<category>
+    <pattern>^ cuantas pruebas teoricas * en todo el curso ^</pattern>
+    <template><srai>^ CUANTAS PRUEBAS TEORICAS * A LO LARGO DEL CURSO ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ cuantas pruebas de teoria * a lo largo del curso ^</pattern>
+    <template><srai>^ CUANTAS PRUEBAS TEORICAS * A LO LARGO DEL CURSO ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ cuantas pruebas de teoria * en todo el curso ^</pattern>
+    <template><srai>^ CUANTAS PRUEBAS TEORICAS * A LO LARGO DEL CURSO ^</srai></template>
+</category>
+
+<!--Regla 34. QUE VALE LA PRIMERA PRUEBA TEORICA?-->
+<category>
+    <pattern>* vale * primera prueba teorica ^</pattern>
+    <template>La primera prueba teorica cuenta 0.5 puntos</template>
+</category>
+
+<category>
+    <pattern>* vale * primera prueba de teoria ^</pattern>
+    <template><srai>* VALE * PRIMERA PRUEBA TEORICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* cuenta * primera prueba teorica ^</pattern>
+    <template><srai>* VALE * PRIMERA PRUEBA TEORICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* cuenta * primera prueba de teoria ^</pattern>
+    <template><srai>* VALE * PRIMERA PRUEBA TEORICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* suma * primera prueba teorica ^</pattern>
+    <template><srai>* VALE * PRIMERA PRUEBA TEORICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* suma * primera prueba de teoria ^</pattern>
+    <template><srai>* VALE * PRIMERA PRUEBA TEORICA ^</srai></template>
+</category>
+
+<!--Regla 35. EN LA PARTE TEORICA SE TIENE EN CUENTA LA ASISTENCIA?-->
+<category>
+    <pattern>^ parte teorica ^ cuenta la asistencia ^</pattern>
+    <template>No, en la parte teorica no se tiene en cuenta la asistencia</template>
+</category>
+
+<category>
+    <pattern>^ parte de teoria ^ cuenta la asistencia ^</pattern>
+    <template><srai>^ PARTE TEORICA ^ CUENTA LA ASISTENCIA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ parte teorica importa ^ la asistencia ^</pattern>
+    <template><srai>^ PARTE TEORICA ^ CUENTA LA ASISTENCIA ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ parte de teoria importa ^ la asistencia ^</pattern>
+    <template><srai>^ PARTE TEORICA ^ CUENTA LA ASISTENCIA ^</srai></template>
+</category>
+
+<!--Regla 36. EN QUE CONSISTE EL EXAMEN DE EJERCICIOS?-->
+<category>
+    <pattern>^ en que consiste * examen de ejercicios ^</pattern>
+    <template>Se trata de un examen practico de resolucion de problemas, el cual tendra un peso del 25 por ciento sobre la nota final de practicas</template>
+</category>
+
+<category>
+    <pattern>^ en que consiste * examen de problemas ^</pattern>
+    <template><srai>^ EN QUE CONSISTE * EXAMEN DE EJERCICIOS ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ en que consiste * examen practico ^</pattern>
+    <template><srai>^ EN QUE CONSISTE * EXAMEN DE EJERCICIOS ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ de que va * examen de ejercicios ^</pattern>
+    <template><srai>^ EN QUE CONSISTE * EXAMEN DE PROBLEMAS ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ de que va * examen de problemas ^</pattern>
+    <template><srai>^ EN QUE CONSISTE * EXAMEN DE PROBLEMAS ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ de que va * examen practico ^</pattern>
+    <template><srai>^ EN QUE CONSISTE * EXAMEN DE PROBLEMAS ^</srai></template>
+</category>
+
+<!--Regla 37. QUE OCURRE SI NO QUIERO DEFENDER UNA PRACTICA?-->
+<category>
+    <pattern>* si no quiero defender una practica ^</pattern>
+    <template>Si no defiendes una practica, tendras nota 0 en dicha practica</template>
+</category>
+
+<category>
+    <pattern>* si no defiendo una practica ^</pattern>
+    <template><srai>* SI NO QUIERO DEFENDER UNA PRACTICA ^</srai></template>
+</category>
+
+<category>
+    <pattern>* si no quiero defender un trabajo ^</pattern>
+    <template><srai>* SI NO QUIERO DEFENDER UNA PRACTICA ^</srai></template>
+</category>
+
+<!--Regla 38. QUE DEBERIA HACER SI NO ESTOY SEGURO DE PODER SUPERAR EL NIVEL 3 DE LA PRACTICA 1?-->
+<category>
+    <pattern>que * no estoy seguro * superar el nivel 3 de la practica ^</pattern>
+    <template>Si no estas seguro de poder superar el nivel 3 de la practica 1, quizas seria mejorar que intentases hacer el nivel 2 y sacar la maxima nota posible en el</template>
+</category>
+
+<category>
+    <pattern>que * no me * capaz de superar el nivel 3 de la practica ^</pattern>
+    <template><srai>QUE * NO ESTOY SEGURO * SUPERAR EL NIVEL 3 DE LA PRACTICA ^</srai></template>
+</category>
+
+<!--Regla 39. CUANTAS PRACTICAS ENTREGABLES TIENE LA ASIGNATURA?-->
+<category>
+    <pattern>^ cuantas practicas ^ tiene la asignatura ^</pattern>
+    <template>La parte practica de la asignatura se compone de 3 practicas entregables y un examen practico de problemas, cada uno de los cuales supone el 25 por ciento de la nota final de practicas</template>
+</category>
+
+<category>
+    <pattern>^ cuantas practicas ^ hay en la asignatura ^</pattern>
+    <template><srai>^ CUANTAS PRACTICAS ^ TIENE LA ASIGNATURA ^</srai></template>
+</category>
+
+<!--Regla 40. YO PROGRAMO MUY BIEN EN C++, PODRIA HACER LAS PRACTICAS EN ESE LENGUAJE?-->
+<category>
+    <pattern>^ programo muy bien en c++ * hacer las practicas en ese lenguaje ^</pattern>
+    <template>Las practicas se realizaran en lenguaje AIML a no ser que el profesor indique lo contrario</template>
+</category>
+
+<category>
+    <pattern>^ podria hacer las practicas en c++ ^</pattern>
+    <template><srai>^ PROGRAMO MUY BIEN EN C++ * HACER LAS PRACTICAS EN ESE LENGUAJE ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ puedo hacer las practicas en c++ ^</pattern>
+    <template><srai>^ PROGRAMO MUY BIEN EN C++ * HACER LAS PRACTICAS EN ESE LENGUAJE ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ programo muy bien en * puedo hacer *</pattern>
+    <template><srai>^ PROGRAMO MUY BIEN EN C++ * HACER LAS PRACTICAS EN ESE LENGUAJE ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ programo muy bien en * podria hacer *</pattern>
+    <template><srai>^ PROGRAMO MUY BIEN EN C++ * HACER LAS PRACTICAS EN ESE LENGUAJE ^</srai></template>
+</category>
+
+<!--Regla 41. ODIO AIML, PODRIA HACER LAS PRACTICAS CON OTRO LENGUAJE?-->
+<category>
+    <pattern>^ podria hacer las practicas * otro lenguaje ^</pattern>
+    <template><srai>^ PROGRAMO MUY BIEN EN C++ * HACER LAS PRACTICAS EN ESE LENGUAJE ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ puedo hacer las practicas * otro lenguaje ^</pattern>
+    <template><srai>^ PROGRAMO MUY BIEN EN C++ * HACER LAS PRACTICAS EN ESE LENGUAJE ^</srai></template>
+</category>
+
+<!--Regla 42. DONDE ESTA LA OFICINA DEL PROFESOR DE PRACTICAS?-->
+<category>
+    <pattern>* la oficina del profesor de practicas ^</pattern>
+    <template>La oficina del profesor (tanto de teoria como de practicas) es el despacho D40 en la ETSIIT</template>
+</category>
+
+<category>
+    <pattern>* el despacho del profesor de practicas ^</pattern>
+    <template><srai>* LA OFICINA DEL PROFESOR DE PRACTICAS ^</srai></template>
+</category>
+
+<!--Regla 43. DONDE ESTA EL DESPACHO DEL PROFESOR DE TEORIA?-->
+<category>
+    <pattern>* la oficina del profesor de teoria ^</pattern>
+    <template><srai>* LA OFICINA DEL PROFESOR DE PRACTICAS ^</srai></template>
+</category>
+
+<category>
+    <pattern>* el despacho del profesor de teoria ^</pattern>
+    <template><srai>* LA OFICINA DEL PROFESOR DE PRACTICAS ^</srai></template>
+</category>
+
+<!--Regla 44. SUMO 15 PUNTOS EN LAS PRACTICAS QUE YA HE HECHO, ESO ME ASEGURA APROBAR LAS PRACTICAS?-->
+<category>
+    <pattern>* 15 puntos en ^ practicas * asegura aprobar ^</pattern>
+    <template>No, llevar 15 puntos en practicas no te asegura aprobarlas</template>
+</category>
+
+<category>
+    <pattern>* 15 puntos en ^ practicas * asegura el aprobado ^</pattern>
+    <template><srai>* 15 PUNTOS EN ^ PRACTICAS * ASEGURA APROBAR ^</srai></template>
+</category>
+
+<!--Regla 45. SUMO 20 PUNTOS EN LAS PRACTICAS QUE YA HE HECHO, ESO ME ASEGURA APROBAR LA ASIGNATURA?-->
+<category>
+    <pattern>* 20 puntos en ^ practicas * asegura aprobar ^</pattern>
+    <template>No, llevar 20 puntos en practicas no te asegura aprobar la asignatura</template>
+</category>
+
+<category>
+    <pattern>* 20 puntos en ^ practicas * asegura el aprobado ^</pattern>
+    <template><srai>* 20 PUNTOS EN ^ PRACTICAS * ASEGURA APROBAR ^</srai></template>
+</category>
+
+<!--Regla 46. ME INCORPORE TARDE A LA ASIGNATURA Y NO PUDE HACER LA PRACTICA 1, PUEDO RECUPERAR ESA PRACTICA?-->
+<category>
+    <pattern>^ no pude hacer la practica 1 ^ puedo recuperar ^</pattern>
+    <template>Si no pudiste hacer la practica 1 por haberte incorporado tarde a la asignatura, lo mejor es que hables con tu profesor de practicas correspondiente y llegueis a un acuerdo sobre si podrias recuperarla</template>
+</category>
+
+<category>
+    <pattern>^ no pude hacer la practica 1 ^ puedo recuperarla ^</pattern>
+    <template><srai>^ NO PUDE HACER LA PRACTICA 1 ^ PUEDO RECUPERAR ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ no hice la practica 1 ^ puedo recuperar ^</pattern>
+    <template><srai>^ NO PUDE HACER LA PRACTICA 1 ^ PUEDO RECUPERAR ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ no hice la practica 1 ^ puedo recuperarla ^</pattern>
+    <template><srai>^ NO PUDE HACER LA PRACTICA 1 ^ PUEDO RECUPERAR ^</srai></template>
+</category>
+
+<!--Regla 47. ME INCORPORE TARDE A LA ASIGNATURA Y NO PUDE HACER LA PRACTICA 1. TENGO POSIBILIDADES DE APROBAR LA PARTE PRACTICA?-->
+<category>
+    <pattern>^ no pude hacer la practica 1 ^ tengo posibilidades  de aprobar ^ practica ^</pattern>
+    <template>Si te incorporaste tarde a la asignatura y no pudiste hacer la practica 1, sera dificil aprobar la parte practica ya que contaras con un 25 por ciento menos de la nota, asi que podrias hablar con tu profesor a ver si existe alguna forma de recuperar dicha practica</template>
+</category>
+
+<category>
+    <pattern>^ no pude hacer la practica 1 ^ puedo aprobar ^ practica ^</pattern>
+    <template><srai>^ NO PUDE HACER LA PRACTICA 1 ^ TENGO POSIBILIDADES DE APROBAR ^ PRACTICA ^</srai></template>
+</category>
+
+<!--Regla 48. ME ENCANTAN LOS AGENTES CONVERSACIONALES Y SOY UN EXPERTO EN SU
+CONSTRUCCION. PODRIA USAR AGENTES CONVERSACIONALES PARA QUE VAYAN EN MI LUGAR
+A HACER LA DEFENSA DE PRACTICAS?-->
+<category>
+    <pattern>^ los agentes conversacionales ^ experto en su construccion ^ podria * para ^ la defensa de ^ practicas ^</pattern>
+    <template>No, por muy experto que seas construyendo agentes conversacionales, la defensa de las practicas deberas realizarla tu si quieres aprobar la asignatura</template>
+</category>
+
+<category>
+    <pattern>^ soy experto en la construccion de ^ agentes conversacionales ^ podria * para ^ la defensa de ^ practicas ^</pattern>
+    <template><srai>^ LOS AGENTES CONVERSACIONALES ^ EXPERTO EN SU CONSTRUCCION ^ PUEDO * PARA ^ LA DEFENSA DE ^ PRACTICAS ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ los agentes conversacionales ^ experto en su construccion ^ podria * para ^ la defensa de mi practica ^</pattern>
+    <template><srai>^ LOS AGENTES CONVERSACIONALES ^ EXPERTO EN SU CONSTRUCCION ^ PUEDO * PARA ^ LA DEFENSA DE ^ PRACTICAS ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ podria usar agentes conversacionales para la defensa de mis practicas ^</pattern>
+    <template><srai>^ LOS AGENTES CONVERSACIONALES ^ EXPERTO EN SU CONSTRUCCION ^ PUEDO * PARA ^ LA DEFENSA DE ^ PRACTICAS ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ los agentes conversacionales ^ experto en su construccion ^ puedo * para ^ la defensa de ^ practicas ^</pattern>
+    <template>No, por muy experto que seas construyendo agentes conversacionales, la defensa de las practicas deberas realizarla tu si quieres aprobar la asignatura</template>
+</category>
+
+<category>
+    <pattern>^ soy experto en la construccion de ^ agentes conversacionales ^ puedo * para ^ la defensa de ^ practicas ^</pattern>
+    <template><srai>^ LOS AGENTES CONVERSACIONALES ^ EXPERTO EN SU CONSTRUCCION ^ PUEDO * PARA ^ LA DEFENSA DE ^ PRACTICAS ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ los agentes conversacionales ^ experto en su construccion ^ puedo * para ^ la defensa de mi practica ^</pattern>
+    <template><srai>^ LOS AGENTES CONVERSACIONALES ^ EXPERTO EN SU CONSTRUCCION ^ PUEDO * PARA ^ LA DEFENSA DE ^ PRACTICAS ^</srai></template>
+</category>
+
+<category>
+    <pattern>^ puedo usar agentes conversacionales para la defensa de mis practicas ^</pattern>
+    <template><srai>^ LOS AGENTES CONVERSACIONALES ^ EXPERTO EN SU CONSTRUCCION ^ PUEDO * PARA ^ LA DEFENSA DE ^ PRACTICAS ^</srai></template>
+</category>
+
+<!--Regla 49. EN LAS SIGUIENTES PRACTICAS HAY TAMBIEN QUE PROGRAMAR?-->
+<category>
+    <pattern>^ en las siguientes practicas * programar ^</pattern>
+    <template>Claro, hay que programar en todas las practicas. Ademas, programar mola!</template>
+</category>
+
+<category>
+    <pattern>^ que programar en las siguientes practicas ^</pattern>
+    <template><srai>^ EN LAS SIGUIENTES PRACTICAS * PROGRAMAR ^</srai></template>
+</category>
+
+<!--Regla 50. EL NIVEL 0 ES MUY FACIL, EL RESTO DE LA PRACTICA SE COMPLICA MUCHO?-->
+<category>
+    <pattern>^ nivel 0 * facil ^ el resto ^ se complica ^</pattern>
+    <template>No lo se, pero espero que el resto de la practica sea tan facil como el nivel 0</template>
+</category>
+
+<category>
+    <pattern>^ nivel 0 * facil ^ el resto * dificil ^</pattern>
+    <template><srai>^ NIVEL 0 * FACIL ^ EL RESTO ^ SE COMPLICA ^</srai></template>
+</category>
+
+</aiml>

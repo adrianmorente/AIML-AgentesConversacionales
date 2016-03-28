@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<!-- Inicio del juego -->
+<category>
+    <pattern>Jugamos ^</pattern>
+    <template>
+        ¿Prefieres adivinar mi personaje o pensarlo tu?
+    </template>
+</category>
+
+<category>
+    <pattern>^ adivinar ^</pattern>
+    <template>
+        <think>
+            <set name="list_names">
+                Alejandro
+                Alfonso
+                Antonio
+                Cristina
+                Gabriela
+                Ivan
+                Javier
+                Juan
+                Laura
+                Luis
+                Marco
+                Maria
+                Paco
+                Pepe
+                Sofia
+                Sonia
+            </set>
+            <set var="cantidad"><srai>COUNT <get name="list_names"/></srai></set>
+            <set var="pos"><srai>RANDOM <get var="cantidad"/></srai></set>
+            <set name="personaje">
+                <srai>
+                    SELECTITEM <get var="pos"/> IN <get name="list_names"/>
+                </srai>
+            </set>
+        </think>
+        Vamos alla, tu preguntas sobre un rasgo del personaje y yo contesto en la forma "si" o "no". Suerte
+    </template>
+</category>
+
+
+
+<!--PREGUNTAS SOBRE LOS RASGOS DEL PERSONAJE-->
+<category>
+    <pattern>es *</pattern>
+    <template>
+        <think>
+            <!--Interpretamos el rasgo, que podria ser el color de pelo o el genero-->
+            <set var="rasgo"><star/></set>
+        </think>
+        <condition var="rasgo">
+            <li value="hombre"><srai>SU GENERO ES hombre</srai></li>
+            <li value="mujer"><srai>SU GENERO ES mujer</srai></li>
+            <li value="un hombre"><srai>SU GENERO ES hombre</srai></li>
+            <li value="una mujer"><srai>SU GENERO ES mujer</srai></li>
+            <li value="moreno"><srai>TIENE EL PELO moreno</srai></li>
+            <li value="morena"><srai>TIENE EL PELO moreno</srai></li>
+            <li value="rubio"><srai>TIENE EL PELO rubio</srai></li>
+            <li value="rubia"><srai>TIENE EL PELO rubio</srai></li>
+            <li value="calvo"><srai>TIENE EL PELO calvo</srai></li>
+            <li value="pelirrojo"><srai>TIENE EL PELO pelirrojo</srai></li>
+            <li value="pelirroja"><srai>TIENE EL PELO pelirrojo</srai></li>
+            <li value="barbudo"><srai>* BARBA ^</srai></li>
+            <li value="oscuro de piel"><srai>TIENE LA PIEL oscura</srai></li>
+            <li value="claro de piel"><srai>TIENE LA PIEL clara</srai></li>
+            <li><srai>TU PERSONAJE ES <star/></srai></li>
+        </condition>
+    </template>
+</category>
+
+<category>
+    <pattern>su genero es *</pattern>
+    <template>
+        <think>
+            <set var="genero_personaje">
+                <map name="genero"><get name="personaje"/></map>
+            </set>
+            <set var="iguales">
+                <srai>COMPARE <get var="genero_personaje"/> WITH <star/></srai>
+            </set>
+        </think>
+        <condition var="iguales">
+            <li value="YES"> Si </li>
+            <li> No </li>
+        </condition>
+    </template>
+</category>
+
+<category>
+    <pattern>tiene la piel *</pattern>
+    <template>
+        <think>
+            <set var="piel_personaje">
+                <map name="piel"><get name="personaje"/></map>
+            </set>
+            <set var="iguales">
+                <srai>COMPARE <get var="piel_personaje"/> WITH <star/></srai>
+            </set>
+        </think>
+        <condition var="iguales">
+            <li value="YES"> Si </li>
+            <li> No </li>
+        </condition>
+    </template>
+</category>
+
+<category>
+    <pattern>tiene el pelo *</pattern>
+    <template>
+        <think>
+            <set var="pelo_personaje">
+                <map name="pelo"><get name="personaje"/></map>
+            </set>
+            <set var="iguales">
+                <srai>COMPARE <get var="pelo_personaje"/> WITH <star/></srai>
+            </set>
+        </think>
+        <condition var="iguales">
+            <li value="YES"> Si </li>
+            <li> No </li>
+        </condition>
+    </template>
+</category>
+
+<category>
+    <pattern>^ ojos *</pattern>
+    <template>
+        <think>
+            <set var="color_ojos">
+                <map name="ojos"><get name="personaje"/></map>
+            </set>
+            <set var="iguales">
+                <srai>COMPARE <get var="color_ojos"/> WITH <star index="2"/></srai>
+            </set>
+        </think>
+        <condition var="iguales">
+            <li value="YES"> Si </li>
+            <li> No </li>
+        </condition>
+    </template>
+</category>
+
+<category>
+    <pattern>* gafas ^</pattern>
+    <template>
+        <think>
+            <set var="lleva_gafas">
+                <map name="gafas"><get name="personaje"/></map>
+            </set>
+        </think>
+        <get var="lleva_gafas"/>
+    </template>
+</category>
+
+<category>
+    <pattern>* barba ^</pattern>
+    <template>
+        <think>
+            <set var="lleva_barba">
+                <map name="barba"><get name="personaje"/></map>
+            </set>
+        </think>
+        <get var="lleva_barba"/>
+    </template>
+</category>
+
+<category>
+    <pattern>* bigote ^</pattern>
+    <template>
+        <think>
+            <set var="lleva_bigote">
+                <map name="bigote"><get name="personaje"/></map>
+            </set>
+        </think>
+        <get var="lleva_bigote"/>
+    </template>
+</category>
+
+<category>
+    <pattern>Tu personaje es *</pattern>
+    <template>
+        <think>
+            <set var="iguales">
+                <srai>COMPARE <get name="personaje"/> WITH <star/></srai>
+            </set>
+        </think>
+        <condition var="iguales">
+            <li value="YES"> Lo has acertado Jugamos otra vez </li>
+            <li> No, no lo has acertado </li>
+        </condition>
+    </template>
+</category>
+
+<!--¿Jugamos otra vez?-->
+<category>
+    <pattern>Si</pattern>
+    <that>LO HAS ACERTADO JUGAMOS OTRA VEZ</that>
+    <template><srai>JUGAMOS ^</srai></template>
+</category>
+
+
+</aiml>

@@ -1,4 +1,4 @@
-# AIML-AgentesConversacionales
+# AIML - Agentes Conversacionales
 
 Este proyecto corresponde a la Práctica 1 de la asignatura Inteligencia Artificial, cursada en la UGR durante el curso 2015-2016.
 
